@@ -22,7 +22,7 @@
 # Copyright:: Copyright (c) 2002 Rafael R. Sevilla
 # License:: GNU Lesser General Public License
 #
-# $Id: packet.rb,v 1.1 2002/07/04 15:29:10 didosevilla Exp $
+# $Id$
 #
 
 module Radius

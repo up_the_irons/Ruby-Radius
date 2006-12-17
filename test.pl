@@ -3,7 +3,7 @@
 # our program.
 # This test program is provided only for illustrative purposes and is
 # placed in the public domain.
-# $Id: test.pl,v 1.1 2002/07/04 15:11:01 didosevilla Exp $
+# $Id$
 #
 use Net::Radius::Packet;
 use Net::Radius::Dictionary;

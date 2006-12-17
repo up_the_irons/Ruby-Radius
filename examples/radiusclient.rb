@@ -5,7 +5,7 @@
 # This code is provided for illustrative purposes only and is placed
 # in the public domain.
 #
-# $Id: radiusclient.rb,v 1.1 2002/07/04 15:31:21 didosevilla Exp $
+# $Id$
 #
 require 'radius/dictionary'
 require 'radius/packet'

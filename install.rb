@@ -23,7 +23,7 @@
 # Copyright:: Copyright (c) 2002 Rafael R. Sevilla
 # License:: GNU Lesser General Public License
 #
-# $Id: install.rb,v 1.1 2002/07/04 14:55:15 didosevilla Exp $
+# $Id$
 #
 
 require 'getoptlong'

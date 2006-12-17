@@ -21,7 +21,7 @@
 # Author:: Rafael R. Sevilla (mailto:dido@imperium.ph)
 # Copyright:: Copyright (c) 2002 Rafael R. Sevilla
 # License:: GNU Lesser General Public License
-# $Id: auth.rb,v 1.1 2002/07/04 15:26:11 didosevilla Exp $
+# $Id$
 #
 
 module Radius

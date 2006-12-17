@@ -3,7 +3,7 @@
 # Net::Radius in Perl.
 # This test program is provided only for illustrative purposes and is placed
 # in the public domain.
-# $Id: test.rb,v 1.1 2002/07/04 15:14:34 didosevilla Exp $
+# $Id$
 
 require './radius/dictionary'
 require './radius/packet'

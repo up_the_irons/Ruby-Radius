@@ -5,7 +5,7 @@
 # This code is provided for illustrative purposes only and is placed
 # in the public domain.
 #
-# $Id: rclient.rb,v 1.1 2002/07/04 15:32:51 didosevilla Exp $
+# $Id$
 #
 require 'radius/auth'
 
