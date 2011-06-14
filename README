@@ -1,15 +1,18 @@
-= Ruby-Radius - RADIUS interface for Ruby
+=======================================
+Ruby-Radius - RADIUS interface for Ruby
+=======================================
 
 This Ruby module provides an interface to the RADIUS protocol.  It
-provides these two classes:
+provides these two classes::
 
-+Radius::Packet+:: Deals with Radius Packets
-+Radius::Dictionary+:: - Deals with RADIUS dictionaries
+  Radius::Packet - Deals with Radius Packets
+  Radius::Dictionary - Deals with RADIUS dictionaries
 
 This module's API is based heavily on the Net::Radius Perl module
 created by Christopher Masto, Luis Munoz, and Ian Smith.
 
-== Installation
+Installation
+------------
 
 Since the module is pure Ruby, to install this all that needs to be
 done is to run the 'install.rb' script.
@@ -25,13 +28,14 @@ documentation should be included ready for you to read within the
 extract the HTML documentation.  Visit the rdoc website at
 http://rdoc.sourceforge.net/ for more information.
 
-= Other stuff
-Author::   Rafael 'Dido' Sevilla <dido@imperium.ph>
-Requires:: Ruby 1.6.7 or later (may work with older versions)
-License::  Copyright (c) 2002 Rafael R. Sevilla
+Other stuff
+-----------
+
+:Author: Rafael 'Dido' Sevilla <dido@imperium.ph>
+:Contributions: Garry C. Dolley <gdolley@arpnetworks.com>
+:Requires: Ruby 1.6.7 or later (may work with older versions)
+:License: Copyright (c) 2002 Rafael R. Sevilla
 	   GNU Lesser General Public License, see the file COPYING.LIB
            for more details.
 
 All of the test and example programs are placed in the public domain.
-
-$Id$
