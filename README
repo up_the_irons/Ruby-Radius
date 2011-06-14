@@ -11,6 +11,10 @@ provides these two classes::
 This module's API is based heavily on the Net::Radius Perl module
 created by Christopher Masto, Luis Munoz, and Ian Smith.
 
+Garry Dolley and OneLogin, Inc. started the RSpec test suite under the
+``test/`` directory and added correct Response Authenticator support
+(previous one is believed to be broken).
+
 Installation
 ------------
 
