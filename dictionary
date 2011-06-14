@@ -65,6 +65,58 @@ ATTRIBUTE	Acct-Terminate-Cause	49	integer
 ATTRIBUTE	NAS-Port-Type		61	integer
 ATTRIBUTE	Port-Limit		62	integer
 
+# ---------------
+# BEGIN: RFC 2868
+# ---------------
+
+ATTRIBUTE	Tunnel-Type		64	integer
+ATTRIBUTE	Tunnel-Medium-Type	65	integer
+
+# Either IPv4, IPv6 or FQDN depending on Tunnel-Medium-Type
+ATTRIBUTE	Tunnel-Client-Endpoint	66	string
+ATTRIBUTE	Tunnel-Server-Endpoint	67	string
+
+ATTRIBUTE	Tunnel-Password		69	string
+ATTRIBUTE	Tunnel-Private-Group-ID 81	string
+ATTRIBUTE	Tunnel-Assignment-ID	82	string
+ATTRIBUTE	Tunnel-Preference	83	string
+ATTRIBUTE	Tunnel-Client-Auth-ID	90	string
+ATTRIBUTE	Tunnel-Server-Auth-ID	91	string
+
+VALUE		Tunnel-Type	PPTP		1
+VALUE		Tunnel-Type	L2F		2
+VALUE		Tunnel-Type	L2TP		3
+VALUE		Tunnel-Type	ATMP		4
+VALUE		Tunnel-Type	VTP		5
+VALUE		Tunnel-Type	AH		6
+VALUE		Tunnel-Type	IP-IP		7
+VALUE		Tunnel-Type	MIN-IP-IP	8
+VALUE		Tunnel-Type	ESP		9
+VALUE		Tunnel-Type	GRE		10
+VALUE		Tunnel-Type	DVS		11
+VALUE		Tunnel-Type	IP-IN-IP	12
+VALUE		Tunnel-Type	VLAN		13       # RFC 3580
+
+VALUE		Tunnel-Medium-Type	IPv4		1
+VALUE		Tunnel-Medium-Type	IPv6		2
+VALUE		Tunnel-Medium-Type	NSAP		3
+VALUE		Tunnel-Medium-Type	HDLC		4
+VALUE		Tunnel-Medium-Type	BBN-1822	5
+VALUE		Tunnel-Medium-Type	802		6
+VALUE		Tunnel-Medium-Type	E.163		7
+VALUE		Tunnel-Medium-Type	E.164		8
+VALUE		Tunnel-Medium-Type	F.69		9
+VALUE		Tunnel-Medium-Type	X.121		10
+VALUE		Tunnel-Medium-Type	IPX		11
+VALUE		Tunnel-Medium-Type	Appletalk	12
+VALUE		Tunnel-Medium-Type	Decnet-IV	13
+VALUE		Tunnel-Medium-Type	Banyan-Vines	14
+VALUE		Tunnel-Medium-Type	E.164-with-NSAP-format-subaddress	15
+
+# ---------------
+# END:   RFC 2868
+# ---------------
+
 
 #
 #	Integer Translations
