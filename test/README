@@ -1,0 +1,7 @@
+To run specs in this directory::
+
+  # Brief output
+  spec test/*.rb
+
+  # Full output and color!
+  spec -fs -c test/*.rb
