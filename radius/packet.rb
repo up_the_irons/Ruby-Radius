@@ -423,7 +423,7 @@ module Radius
 			 Digest::MD5.digest(secret + lastround))
 	lastround = pwdin[i, 16]
       }
-      pwdout.sub(/\000+$/, "") if pwdout
+      pwdout.sub!(/\000+$/, "") if pwdout
       pwdout[length.pwdin, -1] = "" unless (pwdout.length <= pwdin.length)
       return(pwdout)
     end
