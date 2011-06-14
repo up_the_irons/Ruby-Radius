@@ -32,7 +32,8 @@ Other stuff
 -----------
 
 :Author: Rafael 'Dido' Sevilla <dido@imperium.ph>
-:Contributions: Garry C. Dolley <gdolley@arpnetworks.com>
+:Contributions: Garry C. Dolley <gdolley@arpnetworks.com> and
+                OneLogin, Inc. (http://www.onelogin.com)
 :Requires: Ruby 1.6.7 or later (may work with older versions)
 :License: Copyright (c) 2002 Rafael R. Sevilla
 	   GNU Lesser General Public License, see the file COPYING.LIB
