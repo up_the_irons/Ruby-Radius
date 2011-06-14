@@ -58,4 +58,44 @@ describe Radius::Packet do
       @packet.attr('NAS-Port').should == 9
     end
   end
+
+  describe "Response Authenticator" do
+    before do
+      # Create an Access-Accept packet
+      @response = Radius::Packet.new(@dictionary)
+      @response.code = 'Access-Accept'
+      @response.identifier = @packet.identifier
+    end
+
+    describe "access_response_authenticator()" do
+      it "should return correct Response Authenticator" do
+        # Verify Response Authenticator is valid
+        resp_auth = @response.access_response_authenticator(@packet, @secret)
+        base64_resp_auth = [resp_auth].pack('m').chomp
+
+        base64_resp_auth.should == "XXaB2V6qi4LAypOdM+4yUw=="
+        # This Response Authenticator was gathered by watching debug output of
+        # this library interacting with a Cisco ASA (8.0).  It passed the
+        # 'test aaa-server ...' command and confirmed valid.
+      end
+    end
+
+    describe "set_access_response_authenticator!()" do
+      it "should raise error if packet is not an Access-* type" do
+        @response = Radius::Packet.new(@dictionary)
+        @response.code = 'Accounting-Response'
+        @response.identifier = @packet.identifier
+
+        proc {
+          @response.set_access_response_authenticator!(@packet, @secret)
+        }.should raise_error(ArgumentError)
+      end
+
+      it "should set correct Response Authenticator" do
+        @response.set_access_response_authenticator!(@packet, @secret)
+        base64_resp_auth = [@response.authenticator].pack('m').chomp
+        base64_resp_auth.should == "XXaB2V6qi4LAypOdM+4yUw=="
+      end
+    end
+  end
 end

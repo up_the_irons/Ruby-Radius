@@ -499,5 +499,48 @@ module Radius
       return(new)
     end
 
+    # RFC 2865, Page 15:
+    #
+    # "The value of the Authenticator field in Access-Accept, Access-
+    # Reject, and Access-Challenge packets is called the Response
+    # Authenticator, and contains a one-way MD5 hash calculated over
+    # a stream of octets consisting of: the RADIUS packet, beginning
+    # with the Code field, including the Identifier, the Length, the
+    # Request Authenticator field from the Access-Request packet, and
+    # the response Attributes, followed by the shared secret.  That
+    # is, ResponseAuth =
+    # MD5(Code+ID+Length+RequestAuth+Attributes+Secret) where +
+    # denotes concatenation."
+    #
+    # Given a RADIUS access request packet and a shared secret, return
+    # a string suitable for the Authenticator field of Access-Accept,
+    # Access-Reject, and Access-Challenge packets.
+    #
+    # ====Parameters
+    # +request+:: A Radius::Packet object to which we are generating a
+    # response
+    # +secret+:: The shared secret of the RADIUS system.
+    # ====Return value
+    # A string suitable for the Authenticator field of Access-Accept,
+    # Access-Reject, and Access-Challenge packets.
+    def access_response_authenticator(request, secret)
+      self_packed = pack
+      self_packed[4, 16] = request.authenticator
+
+      Digest::MD5.digest(self_packed + secret)
+    end
+
+    # Given a RADIUS access request packet and a shared secret, set the
+    # Authenticator field of the current RADIUS access response packet to
+    # the correct value.
+    def set_access_response_authenticator!(request, secret)
+      case code
+      when /Access-*/
+        self.authenticator = access_response_authenticator(request, secret)
+      else
+        raise ArgumentError.new("This Authenticator is only valid for Access-Accept, Accept-Reject, or Access-Challenge packets")
+      end
+    end
+
   end
 end
