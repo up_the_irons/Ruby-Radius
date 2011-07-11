@@ -419,8 +419,8 @@ module Radius
       lastround = @authenticator
       0.step(pwdin.length-1, 16) {
 	|i|
-	pwdout = xor_str(pwdin[i, 16],
-			 Digest::MD5.digest(secret + lastround))
+	pwdout += xor_str(pwdin[i, 16],
+			  Digest::MD5.digest(secret + lastround))
 	lastround = pwdin[i, 16]
       }
       pwdout.sub!(/\000+$/, "") if pwdout
