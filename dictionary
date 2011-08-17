@@ -49,11 +49,20 @@ ATTRIBUTE	Expiration		21	date
 ATTRIBUTE	Framed-Route		22	string
 ATTRIBUTE	Framed-IPX-Network	23	ipaddr
 ATTRIBUTE	State			24	string
+ATTRIBUTE	Class			25	string
 ATTRIBUTE	Session-Timeout		27	integer
 ATTRIBUTE	Idle-Timeout		28	integer
 ATTRIBUTE	Termination-Action	29	integer
 ATTRIBUTE	Called-Station-Id	30	string
 ATTRIBUTE	Calling-Station-Id	31	string
+ATTRIBUTE	NAS-Identifier		32	string
+ATTRIBUTE	Proxy-State		33	string
+ATTRIBUTE	Login-LAT-Service	34	string
+ATTRIBUTE	Login-LAT-Node		35	string
+ATTRIBUTE	Login-LAT-Group		36	string
+ATTRIBUTE	Framed-AppleTalk-Link	37	string
+ATTRIBUTE	Framed-AppleTalk-Network	38	string
+ATTRIBUTE	Framed-AppleTalk-Zone	39	string
 ATTRIBUTE	Acct-Status-Type	40	integer
 ATTRIBUTE	Acct-Delay-Time		41	integer
 ATTRIBUTE	Acct-Input-Octets	42	integer
@@ -61,9 +70,18 @@ ATTRIBUTE	Acct-Output-Octets	43	integer
 ATTRIBUTE	Acct-Session-Id		44	string
 ATTRIBUTE	Acct-Authentic		45	integer
 ATTRIBUTE	Acct-Session-Time	46	integer
+ATTRIBUTE	Acct-Input-Packets	47	integer
+ATTRIBUTE	Acct-Output-Packets	48	integer
 ATTRIBUTE	Acct-Terminate-Cause	49	integer
+ATTRIBUTE	Acct-Multi-Session-Id	50	integer
+ATTRIBUTE	Acct-Link-Count		51	integer
+ATTRIBUTE	Acct-Input-Gigawords	52	integer
+ATTRIBUTE	Acct-Output-Gigawords	53	integer
+ATTRIBUTE	Event-Timestamp		55	integer
+ATTRIBUTE	CHAP-Challenge		60	integer
 ATTRIBUTE	NAS-Port-Type		61	integer
 ATTRIBUTE	Port-Limit		62	integer
+ATTRIBUTE	Login-LAT-Port		63	integer
 
 # ---------------
 # BEGIN: RFC 2868
