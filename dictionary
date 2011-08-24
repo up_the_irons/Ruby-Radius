@@ -82,6 +82,21 @@ ATTRIBUTE	CHAP-Challenge		60	integer
 ATTRIBUTE	NAS-Port-Type		61	integer
 ATTRIBUTE	Port-Limit		62	integer
 ATTRIBUTE	Login-LAT-Port		63	integer
+ATTRIBUTE	ARAP-Password		70	string
+ATTRIBUTE	ARAP-Features		71	string
+ATTRIBUTE	ARAP-Zone-Access	72	integer
+ATTRIBUTE	ARAP-Security		73	integer
+ATTRIBUTE	ARAP-Security-Data	74	integer
+ATTRIBUTE	Password-Retry		75	integer
+ATTRIBUTE	Prompt			76	integer
+ATTRIBUTE	Connect-Info		77	string
+ATTRIBUTE	Configuration-Token	78	string
+ATTRIBUTE	EAP-Message		79	string
+ATTRIBUTE	Message-Authenticator	80	string
+ATTRIBUTE	ARAP-Challenge-Response	84	string
+ATTRIBUTE	Acct-Interim-Interval	85	integer
+ATTRIBUTE	NAS-Port-Id		87	string
+ATTRIBUTE	Framed-Pool		88	string
 
 # ---------------
 # BEGIN: RFC 2868
@@ -93,6 +108,8 @@ ATTRIBUTE	Tunnel-Medium-Type	65	integer
 # Either IPv4, IPv6 or FQDN depending on Tunnel-Medium-Type
 ATTRIBUTE	Tunnel-Client-Endpoint	66	string
 ATTRIBUTE	Tunnel-Server-Endpoint	67	string
+
+ATTRIBUTE	Acct-Tunnel-Connection-ID	68	string
 
 ATTRIBUTE	Tunnel-Password		69	string
 ATTRIBUTE	Tunnel-Private-Group-ID 81	string
