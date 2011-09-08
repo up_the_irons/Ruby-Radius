@@ -542,5 +542,31 @@ module Radius
       end
     end
 
+    # This code is largely copied from bklang's version of the
+    # Ruby-Radius project found here:
+    #
+    # https://github.com/bklang/Ruby-Radius.git
+    def generate_random_authenticator
+      # According to RFC 2138:
+      # In Access-Request Packets, the Authenticator value is a 16 octet
+      # random number, called the Request Authenticator. The value SHOULD
+      # be unpredictable and unique over the lifetime of a secret (the
+      # password shared between the client and the RADIUS server)
+
+      # Get authenticator data from /dev/urandom if possible
+      if (File.exist?("/dev/urandom"))
+        File.open("/dev/urandom") { |urandom|
+          authenticator = urandom.read(16)
+        }
+      else
+        # use the Kernel:rand method. This is quite probably not
+        # as secure as using /dev/urandom, be wary...
+        authenticator = [rand(65536), rand(65536), rand(65536),
+          rand(65536), rand(65536), rand(65536), rand(65536),
+          rand(65536)].pack("n8")
+      end
+
+      authenticator
+    end
   end
 end

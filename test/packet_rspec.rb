@@ -98,4 +98,30 @@ describe Radius::Packet do
       end
     end
   end
+
+  describe "generate_random_authenticator()" do
+    describe "with /dev/urandom available" do
+      before do
+        @device = "/dev/urandom"
+        File.stub!(:exist?).and_return(true)
+      end
+
+      it "should use /dev/urandom if available" do
+        File.should_receive(:open).with(@device)
+        @packet.generate_random_authenticator
+      end
+    end
+
+    describe "without /dev/urandom" do
+      before do
+        File.stub!(:exist?).and_return(false)
+      end
+
+      it "should use rand()" do
+        @packet.should_receive(:rand).with(65536).exactly(8).times.\
+          and_return(1)
+        @packet.generate_random_authenticator
+      end
+    end
+  end
 end
